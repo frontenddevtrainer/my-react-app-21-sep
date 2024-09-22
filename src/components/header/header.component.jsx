@@ -1,7 +1,8 @@
 import React from "react";
 
-const Header = () => {
-  return <div style={{ backgroundColor: "yellow" }}>Application Name</div>;
+const Header = (props) => {
+  const applicationName = props.name;
+  return <div style={{ backgroundColor: "yellow" }}>{applicationName}</div>;
 };
 
 export default Header;
