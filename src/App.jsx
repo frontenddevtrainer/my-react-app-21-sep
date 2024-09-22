@@ -7,7 +7,6 @@ function Application() {
   return (
     <div style={{ backgroundColor: "blue", minHeight: "100px" }}>
       <Header />
-
       <OfferCardGroup />
       <MasterHead />
     </div>
