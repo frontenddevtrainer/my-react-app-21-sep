@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const commonStyles = {
   padding: "10px",
@@ -12,6 +12,21 @@ const style = {
 
 const OfferCard = (props) => {
   const { offer } = props;
+
+  useEffect(()=>{
+    console.log("Component Update")
+  }, [offer])
+
+
+  // ComponentDidMount
+  useEffect(()=>{
+    console.log("ComponentDidMount");
+    return ()=>{
+        console.log("ComponentWillUnmount")
+    }
+  }, [])
+
+  
   // const [state, setState] = useState(defaultValue);
   const [counter, setCounter] = useState(0);
 
