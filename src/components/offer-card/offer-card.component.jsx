@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const commonStyles = {
   padding: "10px",
@@ -10,17 +10,29 @@ const style = {
   backgroundColor: "limegreen",
 };
 
-const sender = "Praveen";
-const reciever = "Manish";
+const OfferCard = (props) => {
+  const { offer } = props;
+  // const [state, setState] = useState(defaultValue);
+  const [counter, setCounter] = useState(0);
 
-const mail = `Hi ${reciever}, How are you!, 
-can you please send me the report?
-Thanks
-${sender}
-`
+  const increaseCounter = () => {
+    setCounter(counter + 1);
+  };
 
-const OfferCard = () => {
-  return <div style={style}>{mail}</div>;
+  const decreaseCounter = () => {
+    if (counter > 0) {
+      setCounter(counter - 1);
+    }
+  };
+
+  return (
+    <div style={style}>
+      {offer.text}
+      <button onClick={decreaseCounter}>-</button>
+      {counter}
+      <button onClick={increaseCounter}>+</button>
+    </div>
+  );
 };
 
 export default OfferCard;
