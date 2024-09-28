@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../../components/header/header.component";
 
-import { useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 
 const ProductsPage = () => {
   const params = useParams();
@@ -12,6 +12,7 @@ const ProductsPage = () => {
     <div>
       <Header name="NewTravelApp" />
       Products Page
+      <Outlet/>
     </div>
   );
 };

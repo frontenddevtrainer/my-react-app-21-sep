@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Outlet } from "react-router-dom";
 import Homepage from "./pages/homepage/homepage.component";
 import ProductsPage from "./pages/productspage/productspage.component";
 import Customerpage from "./pages/customerpage/customerpage.component";
@@ -12,6 +12,24 @@ const Router = createBrowserRouter([
   {
     path: "/products",
     element: <ProductsPage />,
+    children: [
+      {
+        // /products/content-1
+        path: "content-1",
+        element: <div>Content 1</div>,
+      },
+      {
+        // /products/content-2
+        path: "content-2",
+        element: <div>Content 2 <Outlet></Outlet></div>,
+        children: [
+            {
+                path: "level-2",
+                element : <div>Level 2</div>
+            }
+        ]
+      },
+    ],
   },
   {
     // /products/abc
@@ -22,8 +40,7 @@ const Router = createBrowserRouter([
     path: "/products/:thisisproductid/productid",
     element: <ProductsPage />,
   },
-  
-  
+
   {
     path: "/products/:thisisproductid/name/:name",
     element: <ProductsPage />,
@@ -33,10 +50,6 @@ const Router = createBrowserRouter([
     path: "/products/:id/name/:sku",
     element: <ProductsPage />,
   },
-
-
-
-
 
   {
     path: "/customer",
