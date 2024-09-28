@@ -1,30 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import OfferCard from "./offer-card.component";
 
-const offersList = [
-  {
-    id: 1,
-    text: "Electronics @ 10% off",
-  },
-  {
-    id: 2,
-    text: "iPhone @ 5% off",
-  },
-  {
-    id: 3,
-    text: "TVs @ 50% off",
-  },
-  {
-    id: 4,
-    text: "Mobile Phones @ 2% off",
-  },
-  {
-    id: 5,
-    text: "Washing Machines @ 7% off",
-  },
-];
-
 const OfferCardGroup = () => {
+  const [offersList, setOffersList] = useState(null);
+
+  // Component Did Mount
+  useEffect(() => {
+    const callAPI = async () => {
+      const response = await fetch("http://localhost:3000/offers");
+      const json = await response.json();
+      setOffersList(json);
+    };
+    callAPI();
+  }, []);
+
   return (
     <div
       style={{
@@ -34,6 +23,7 @@ const OfferCardGroup = () => {
         gridRowGap: "10px",
       }}
     >
+      {offersList === null && <div>Loading...</div>}
       {offersList &&
         offersList.length > 0 &&
         offersList.map((offer) => <OfferCard offer={offer} />)}

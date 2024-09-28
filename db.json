@@ -5,5 +5,27 @@
       "category": "phones",
       "id": 1
     }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "text": "Electronics @ 10% off"
+    },
+    {
+      "id": 2,
+      "text": "iPhone @ 5% off"
+    },
+    {
+      "id": 3,
+      "text": "TVs @ 50% off"
+    },
+    {
+      "id": 4,
+      "text": "Mobile Phones @ 2% off"
+    },
+    {
+      "id": 5,
+      "text": "Washing Machines @ 7% off"
+    }
   ]
 }

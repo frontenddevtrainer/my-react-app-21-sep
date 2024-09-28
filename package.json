@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "dev:port": "vite --port=3000",
-    "dev:api": "json-server --watch db.json"
+    "dev:api": "json-server --watch db.json --delay=1000"
   },
   "dependencies": {
     "json-server": "^0.17.4",
