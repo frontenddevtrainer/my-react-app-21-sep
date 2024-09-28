@@ -1,13 +1,13 @@
 import React from "react";
 import Header from "../../components/header/header.component";
 
-const ProductsPage = () => {
+const Customerpage = () => {
   return (
     <div>
       <Header name="NewTravelApp" />
-      Products Page
+      Customer
     </div>
   );
 };
 
-export default ProductsPage;
+export default Customerpage;

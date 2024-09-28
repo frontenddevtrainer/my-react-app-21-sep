@@ -13,7 +13,7 @@ function Application() {
 
   return (
     <div style={{ backgroundColor: "blue", minHeight: "100px" }}>
-      <Header name="NewTravelApp" count={counter} />
+      
       {/* <Router /> */}
       {/* <OfferCardGroup />
       <MasterHead />
