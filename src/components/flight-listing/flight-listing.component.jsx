@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
-import { getFlights } from "../../store/slices/flights";
+import { fetchFlights } from "../../store/slices/flights";
 
 const FlightListing = ()=>{
 
@@ -16,7 +16,7 @@ const FlightListing = ()=>{
     
 
     useEffect(()=>{
-        dispatch(getFlights())
+        dispatch(fetchFlights())
     }, [])
 
 

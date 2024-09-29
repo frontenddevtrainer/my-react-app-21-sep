@@ -1,9 +1,11 @@
 import React from "react";
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
+import NavDropdown from "react-bootstrap/NavDropdown";
 import { Link } from "react-router-dom";
+
+import { useSelector } from "react-redux";
 
 const Header = (props) => {
   //   const applicationName = props.name;
@@ -12,6 +14,14 @@ const Header = (props) => {
   // Object Destructing
   // const {} = Object Value;
   // const [] = Array Value;
+
+  const user = useSelector((state) => {
+    return state.user;
+  });
+
+  // const flights = useSelector((state) => {
+  //   return state.flights;
+  // });
 
   const { name: applicationName, count } = props;
 
@@ -24,6 +34,8 @@ const Header = (props) => {
           <Nav className="me-auto">
             <Link to="/">Home</Link>
             <Link to="/products">Products</Link>
+            {user && <Link to="/user">{user.name}</Link>}
+            {/* Current page has {flights.flights.length} flights */}
           </Nav>
         </Navbar.Collapse>
       </Container>
