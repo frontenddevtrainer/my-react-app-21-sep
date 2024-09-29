@@ -2,7 +2,8 @@ import { useSelector } from "react-redux";
 
 const FlightCount = () => {
   const flights = useSelector((state) => {
-    return state.flights;
+    const { flights } = state
+    return flights.flights;
   });
 
   return `Total Flights: ${flights.length}`;

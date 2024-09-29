@@ -8,7 +8,8 @@ const FlightListing = ()=>{
     const dispatch = useDispatch();
 
     const listing = useSelector((state)=>{
-        return state.flights
+        const { flights } = state
+        return flights.flights
     })
 
     console.log(listing);
