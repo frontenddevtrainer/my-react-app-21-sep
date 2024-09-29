@@ -9,18 +9,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import { RouterProvider } from "react-router-dom";
 
+import { Provider as ReduxProvider } from "react-redux"
+import store from "./store";
+
 function Application() {
   const counter = 10;
 
   return (
-    <div style={{ backgroundColor: "blue", minHeight: "100px" }}>
-      {/* <Router /> */}
-      {/* 
-      <MasterHead />
-      <ClassDemo />
-      <LoginForm /> */}
-      <RouterProvider router={Router} />
-    </div>
+    <ReduxProvider store={store}>
+      <div style={{ minHeight: "100px" }}>
+        {/* <Router /> */}
+        {/* 
+        <MasterHead />
+        <ClassDemo />
+        <LoginForm /> */}
+        <RouterProvider router={Router} />
+      </div>
+    </ReduxProvider>
   );
 }
 

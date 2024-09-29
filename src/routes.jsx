@@ -3,11 +3,16 @@ import Homepage from "./pages/homepage/homepage.component";
 import ProductsPage from "./pages/productspage/productspage.component";
 import Customerpage from "./pages/customerpage/customerpage.component";
 import Notfoundpage from "./pages/notfoundpage/notfoundpage.component";
+import FlightsPage from "./pages/flights/flights.components";
 
 const Router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage />,
+  },
+  {
+    path: "/flights",
+    element : <FlightsPage/>
   },
   {
     path: "/products",
