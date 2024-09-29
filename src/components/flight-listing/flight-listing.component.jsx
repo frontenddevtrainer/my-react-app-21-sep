@@ -22,7 +22,7 @@ const FlightListing = ()=>{
     return <ul>
         {listing && listing.map((flight)=>{
             return  <li key={flight.id}>
-                {flight.route}
+                {flight.flight_name}
             </li>
         })}
     </ul>
