@@ -2,7 +2,13 @@ import styles from "./text-input.module.css";
 
 console.log(styles);
 
-const TextInput = ({ label, type = "text", change = () => {}, name = "" }) => {
+const TextInput = ({
+  label,
+  type = "text",
+  change = () => {},
+  name = "",
+  value,
+}) => {
   return (
     <p className={styles["text-row"]}>
       <label>{label}</label>
