@@ -8,18 +8,6 @@
   ],
   "flights": [
     {
-      "flight_name": "Flight 1",
-      "airline": "Gabcube",
-      "price": 1454.48,
-      "id": 6,
-      "departure_time": "4/13/2022 23:30",
-      "arrival_time": "9/10/2022 07:36",
-      "departure_city": "Tyachiv",
-      "arrival_city": "Baisha",
-      "flight_duration": 3.8,
-      "available_seats": 64
-    },
-    {
       "flight_name": "Flight 2",
       "airline": "Dynava",
       "price": 2845.46,

@@ -24,8 +24,11 @@ const addFlight = createAsyncThunk("flights/addFlights", async (payload) => {
 
 const deleteFlight = createAsyncThunk("flights/deleteFlight", async (id) => {
   try {
-    const response = await axios.delete(`http://localhost:3000/flights/${id}`);
-    return response.data;
+    const deleteResponse = await axios.delete(
+      `http://localhost:3000/flights/${id}`
+    );
+    const fetchResponse = await axios.get(`http://localhost:3000/flights/`);
+    return fetchResponse.data;
   } catch (error) {
     return [];
   }
@@ -78,7 +81,9 @@ const FlightsSlice = createSlice({
     builder.addCase(addFlight.rejected, () => {});
 
     builder.addCase(deleteFlight.pending, () => {});
-    builder.addCase(deleteFlight.fulfilled, () => {});
+    builder.addCase(deleteFlight.fulfilled, (state, action) => {
+      state.flights = action.payload
+    });
     builder.addCase(deleteFlight.rejected, () => {});
   },
 });
@@ -86,4 +91,11 @@ const FlightsSlice = createSlice({
 const { actions, reducer } = FlightsSlice;
 const { getFlights, filterByPrice } = actions;
 
-export { reducer, getFlights, filterByPrice, fetchFlights, addFlight, deleteFlight};
+export {
+  reducer,
+  getFlights,
+  filterByPrice,
+  fetchFlights,
+  addFlight,
+  deleteFlight,
+};
