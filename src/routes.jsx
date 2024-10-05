@@ -5,6 +5,7 @@ import Customerpage from "./pages/customerpage/customerpage.component";
 import Notfoundpage from "./pages/notfoundpage/notfoundpage.component";
 import FlightsPage from "./pages/flights/flights.components";
 import AddFlightPage from "./pages/admin/add-flight/add-flight-page.component";
+import AdminFlightsPage from "./pages/admin/flights/flights-page.component";
 
 const Router = createBrowserRouter([
   {
@@ -68,6 +69,10 @@ const Router = createBrowserRouter([
   {
     path: "/admin/add-flight",
     element: <AddFlightPage />,
+  },
+  {
+    path: "/admin/flights",
+    element: <AdminFlightsPage />,
   },
   {
     path: "*",
