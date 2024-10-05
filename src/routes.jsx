@@ -4,6 +4,7 @@ import ProductsPage from "./pages/productspage/productspage.component";
 import Customerpage from "./pages/customerpage/customerpage.component";
 import Notfoundpage from "./pages/notfoundpage/notfoundpage.component";
 import FlightsPage from "./pages/flights/flights.components";
+import AddFlightPage from "./pages/admin/add-flight/add-flight-page.component";
 
 const Router = createBrowserRouter([
   {
@@ -12,7 +13,7 @@ const Router = createBrowserRouter([
   },
   {
     path: "/flights",
-    element : <FlightsPage/>
+    element: <FlightsPage />,
   },
   {
     path: "/products",
@@ -26,13 +27,17 @@ const Router = createBrowserRouter([
       {
         // /products/content-2
         path: "content-2",
-        element: <div>Content 2 <Outlet></Outlet></div>,
+        element: (
+          <div>
+            Content 2 <Outlet></Outlet>
+          </div>
+        ),
         children: [
-            {
-                path: "level-2",
-                element : <div>Level 2</div>
-            }
-        ]
+          {
+            path: "level-2",
+            element: <div>Level 2</div>,
+          },
+        ],
       },
     ],
   },
@@ -59,6 +64,10 @@ const Router = createBrowserRouter([
   {
     path: "/customer",
     element: <Customerpage />,
+  },
+  {
+    path: "/admin/add-flight",
+    element: <AddFlightPage />,
   },
   {
     path: "*",
