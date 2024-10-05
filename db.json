@@ -126,6 +126,21 @@
       "arrival_city": "Sutysky",
       "flight_duration": 5.4,
       "available_seats": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "flight_name": "dasda",
+      "airline": "dasdasdsad",
+      "price": "asdad",
+      "departure_time": "dasdad",
+      "arrival_time": "asdada",
+      "departure_city": "dasdad",
+      "arrival_city": "dasdsa",
+      "flight_duration": "dasdsad",
+      "available_seats": "dasdas",
+      "id": 12
     }
   ],
   "offers": [
