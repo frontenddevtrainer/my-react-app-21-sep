@@ -8,66 +8,6 @@
   ],
   "flights": [
     {
-      "flight_name": "Flight 3",
-      "airline": "Centidel",
-      "price": 7771.74,
-      "id": 1,
-      "departure_time": "3/27/2022 19:09",
-      "arrival_time": "3/12/2022 08:27",
-      "departure_city": "Kortesjärvi",
-      "arrival_city": "Konongo",
-      "flight_duration": 1.8,
-      "available_seats": 122
-    },
-    {
-      "flight_name": "Flight 3",
-      "airline": "Kazio",
-      "price": 2980.2,
-      "id": 2,
-      "departure_time": "10/3/2022 08:49",
-      "arrival_time": "1/19/2022 06:01",
-      "departure_city": "Khotsimsk",
-      "arrival_city": "Ladoang",
-      "flight_duration": 5.2,
-      "available_seats": 176
-    },
-    {
-      "flight_name": "Flight 3",
-      "airline": "Divanoodle",
-      "price": 1947.71,
-      "id": 3,
-      "departure_time": "12/25/2022 22:03",
-      "arrival_time": "6/6/2022 18:17",
-      "departure_city": "Gilowice",
-      "arrival_city": "Stoczek",
-      "flight_duration": 1.5,
-      "available_seats": 39
-    },
-    {
-      "flight_name": "Flight 2",
-      "airline": "Edgeclub",
-      "price": 6419.35,
-      "id": 4,
-      "departure_time": "4/29/2022 22:26",
-      "arrival_time": "12/29/2022 14:46",
-      "departure_city": "Wiset Chaichan",
-      "arrival_city": "Armash",
-      "flight_duration": 3.8,
-      "available_seats": 43
-    },
-    {
-      "flight_name": "Flight 1",
-      "airline": "Topiczoom",
-      "price": 5291.01,
-      "id": 5,
-      "departure_time": "2/15/2022 09:48",
-      "arrival_time": "6/5/2022 08:41",
-      "departure_city": "Kitami",
-      "arrival_city": "Qinshan",
-      "flight_duration": 3.2,
-      "available_seats": 111
-    },
-    {
       "flight_name": "Flight 1",
       "airline": "Gabcube",
       "price": 1454.48,
