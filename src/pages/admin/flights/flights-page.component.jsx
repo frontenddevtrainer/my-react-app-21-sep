@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteFlight, fetchFlights } from "../../../store/slices/flights";
+import { fetchFlights } from "../../../store/slices/flights";
+
 import DeleteModal from "../../../components/delete-modal/delete-modal.component";
 
 const AdminFlightsPage = () => {
@@ -31,7 +32,7 @@ const AdminFlightsPage = () => {
   };
 
   const handleDeleteModalOnDelete = (flight) => {
-    dispatch(deleteFlight(flight.id));
+    // dispatch(deleteFlight(flight.id));
     setShowDeleteModal(null);
   };
 

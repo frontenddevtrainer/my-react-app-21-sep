@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import TextInput from "../../../components/controls/text-input/text-input.component";
 import { Formik } from "formik";
-import { addFlight } from "../../../store/slices/flights";
+// import { addFlight } from "../../../store/slices/flights";
 
 const AddFlightPage = () => {
   const dispatch = useDispatch();
@@ -11,7 +11,7 @@ const AddFlightPage = () => {
       initialValues={{}}
       onSubmit={(values) => {
         console.log(values);
-        dispatch(addFlight(values));
+        // dispatch(addFlight(values));
       }}
     >
       {({ errors, handleChange, handleSubmit, values }) => {
