@@ -60,6 +60,11 @@ const resolvers = {
       });
     },
   },
+  Mutation : {
+    addFlight : ()=>{
+        
+    }
+  }
 };
 
 export default resolvers;
