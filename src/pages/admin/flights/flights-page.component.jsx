@@ -15,8 +15,6 @@ const FETCH_FLIGHT_QUERY = gql`
 `;
 
 const AdminFlightsPage = () => {
-  const flights = [];
-
   const { data, loading, error } = useQuery(FETCH_FLIGHT_QUERY);
 
   return (
@@ -30,9 +28,10 @@ const AdminFlightsPage = () => {
           </tr>
         </thead>
         <tbody>
-          {flights &&
-            flights.length > 0 &&
-            flights.map((flight) => {
+          {data &&
+            data.flights &&
+            data.flights.length > 0 &&
+            data.flights.map((flight) => {
               return (
                 <tr>
                   <td>{flight.flight_name}</td>
