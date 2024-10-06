@@ -1,39 +1,23 @@
-import { useEffect, useState } from "react";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteFlight, fetchFlights } from "../../../store/slices/flights";
+
 import DeleteModal from "../../../components/delete-modal/delete-modal.component";
+import { useQuery, gql } from "@apollo/client";
+
+const FETCH_FLIGHT_QUERY = gql`
+  query Flights {
+    flights {
+      id
+      flight_name
+      arrival_time
+    }
+  }
+`;
 
 const AdminFlightsPage = () => {
-  const dispatch = useDispatch();
-  const [showDeleteModal, setShowDeleteModal] = useState(null);
+  const flights = [];
 
-  useEffect(() => {
-    dispatch(fetchFlights());
-  }, [dispatch]);
-
-  const flights = useSelector((store) => {
-    console.log(store.flights.flights);
-    return store.flights.flights;
-  });
-
-  if (!flights) {
-    return <div>No Flights found</div>;
-  }
-
-  const handleFlightDelete = (flight) => {
-    setShowDeleteModal(flight);
-  };
-
-  const handleDeleteModalClose = () => {
-    setShowDeleteModal(null);
-  };
-
-  const handleDeleteModalOnDelete = (flight) => {
-    dispatch(deleteFlight(flight.id));
-    setShowDeleteModal(null);
-  };
+  const { data, loading, error } = useQuery(FETCH_FLIGHT_QUERY);
 
   return (
     <>
@@ -69,12 +53,12 @@ const AdminFlightsPage = () => {
         </tbody>
       </Table>
       <DeleteModal
-        selected={showDeleteModal}
-        show={showDeleteModal}
+        selected={() => {}}
+        show={false}
         title={"Delete Flight"}
         message={"Are you sure?"}
-        onClose={handleDeleteModalClose}
-        onDelete={handleDeleteModalOnDelete}
+        onClose={() => {}}
+        onDelete={() => {}}
       />
     </>
   );
