@@ -16,6 +16,7 @@ const typeDefs = gql`
 
   type Query {
     flights: [Flight]
+    flight(id: Int): Flight
   }
 `;
 
