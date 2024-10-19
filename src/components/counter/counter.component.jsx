@@ -1,7 +1,11 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import { ThemeContext } from "../../context/theme.context";
 
 export default function CounterComponent({ callback }) {
   const [counter, setCounter] = useState(0);
+  const theme = useContext(ThemeContext);
+
+  console.log(theme);
 
   const callAPI = () => {};
 
@@ -9,8 +13,8 @@ export default function CounterComponent({ callback }) {
     callAPI();
   }, [counter]);
 
-  const update = (type) => {
-    setCounter((counter) => {
+  const update = async (type) => {
+    await setCounter((counter) => {
       if (type === "inc") {
         return counter + 1;
       } else {
@@ -20,7 +24,7 @@ export default function CounterComponent({ callback }) {
   };
 
   return (
-    <section>
+    <section style={{ background: theme.theme === "light" ? "red" : "blue" }}>
       <button
         onClick={() => {
           update("inc");

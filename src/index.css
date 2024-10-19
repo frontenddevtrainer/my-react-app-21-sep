@@ -1,3 +1,7 @@
 section {
   padding: 10px;
 }
+
+.light {
+  background: gray;
+}
