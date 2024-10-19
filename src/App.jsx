@@ -13,42 +13,28 @@ import { Provider as ReduxProvider } from "react-redux";
 import store from "./store";
 import { ApolloProvider } from "@apollo/client";
 import { graphqlClient } from "./graphql/client";
-import Provider from "./context/theme.context";
+import ThemeProvider, { useTheme } from "./context/theme.context";
+import ChangeTheme from "./components/change-theme/change-theme.component";
 
 function Application() {
   const counter = 10;
 
-  const [theme, setTheme] = useState("light");
-
   return (
-    <Provider value={{ theme: theme }}>
+    <ThemeProvider>
       <ApolloProvider client={graphqlClient}>
         <ReduxProvider store={store}>
-          <div style={{ minHeight: "100px" }} className={theme}>
+          <div style={{ minHeight: "100px" }}>
             {/* <Router /> */}
             {/* 
         <MasterHead />
         <ClassDemo />
         <LoginForm /> */}
-            <button
-              onClick={() => {
-                setTheme("light");
-              }}
-            >
-              Light
-            </button>
-            <button
-              onClick={() => {
-                setTheme("dark");
-              }}
-            >
-              Dark
-            </button>
+            <ChangeTheme />
             <RouterProvider router={Router} />
           </div>
         </ReduxProvider>
       </ApolloProvider>
-    </Provider>
+    </ThemeProvider>
   );
 }
 

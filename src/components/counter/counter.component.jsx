@@ -1,9 +1,9 @@
-import { useContext, useEffect, useState } from "react";
-import { ThemeContext } from "../../context/theme.context";
+import { useEffect, useState } from "react";
+import { useTheme } from "../../context/theme.context";
 
 export default function CounterComponent({ callback }) {
   const [counter, setCounter] = useState(0);
-  const theme = useContext(ThemeContext);
+  const { theme } = useTheme();
 
   console.log(theme);
 
@@ -24,7 +24,7 @@ export default function CounterComponent({ callback }) {
   };
 
   return (
-    <section style={{ background: theme.theme === "light" ? "red" : "blue" }}>
+    <section style={{ background: theme === "light" ? "red" : "blue" }}>
       <button
         onClick={() => {
           update("inc");
