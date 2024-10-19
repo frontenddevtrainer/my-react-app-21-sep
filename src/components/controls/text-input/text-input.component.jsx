@@ -1,20 +1,15 @@
+import { forwardRef, useRef } from "react";
 import styles from "./text-input.module.css";
 
-console.log(styles);
-
-const TextInput = ({
-  label,
-  type = "text",
-  change = () => {},
-  name = "",
-  value,
-}) => {
-  return (
-    <p className={styles["text-row"]}>
-      <label>{label}</label>
-      <input type={type} name={name} onChange={change} />
-    </p>
-  );
-};
+const TextInput = forwardRef(
+  ({ label, type = "text", change = () => {}, name = "", value }, ref) => {
+    return (
+      <p className={styles["text-row"]}>
+        <label>{label}</label>
+        <input type={type} ref={ref} name={name} onChange={change} />
+      </p>
+    );
+  }
+);
 
 export default TextInput;

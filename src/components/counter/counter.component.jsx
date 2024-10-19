@@ -5,8 +5,6 @@ export default function CounterComponent({ callback }) {
   const [counter, setCounter] = useState(0);
   const { theme } = useTheme();
 
-  console.log(theme);
-
   const callAPI = () => {};
 
   useEffect(() => {

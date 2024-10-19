@@ -2,9 +2,18 @@ import { useDispatch } from "react-redux";
 import TextInput from "../../../components/controls/text-input/text-input.component";
 import { Formik } from "formik";
 import { addFlight } from "../../../store/slices/flights";
+import { useEffect, useRef } from "react";
 
 const AddFlightPage = () => {
   const dispatch = useDispatch();
+
+  const nameRef = useRef(null);
+
+  console.log(nameRef.current);
+
+  useEffect(() => {
+    nameRef.current.focus()
+  }, []);
 
   return (
     <Formik
@@ -18,6 +27,7 @@ const AddFlightPage = () => {
         return (
           <form onSubmit={handleSubmit}>
             <TextInput
+              ref={nameRef}
               value={values["flight_name"]}
               change={handleChange}
               label={"Flight Name"}
